@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiBaseUrl: 'http://localhost:5000/api/v1'
+    apiBaseUrl: 'https://ethara-ai-backend-production-612a.up.railway.app:5000/api/v1'
 };
