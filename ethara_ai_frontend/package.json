@@ -3,14 +3,15 @@
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "npx serve -s dist/ethara_ai_frontend -l tcp://0.0.0.0:$PORT",
-        "build": "ng build",
+        "start": "serve -s dist/ethara_ai_frontend/browser -l tcp://0.0.0.0:$PORT",
+        "build": "ng build --configuration=production 2>&1",
         "watch": "ng build --watch --configuration development",
         "test": "ng test"
     },
     "private": true,
     "packageManager": "npm@10.9.0",
     "dependencies": {
+        "serve": "^14.2.4",
         "@angular/common": "^21.2.0",
         "@angular/compiler": "^21.2.0",
         "@angular/core": "^21.2.0",
