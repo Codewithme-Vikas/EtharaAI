@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "npx serve -s dist/ethara_ai_frontend",
+        "start": "serve -s dist/ethara_ai_frontend -l tcp://0.0.0.0:$PORT",
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
         "test": "ng test"
