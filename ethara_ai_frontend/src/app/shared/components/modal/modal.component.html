@@ -1,0 +1,40 @@
+@if (isOpen) {
+  <div class="fixed inset-0 z-50 flex items-center justify-center px-4">
+    <button
+      type="button"
+      class="absolute inset-0 bg-slate-900/50"
+      (click)="onBackdropClick()"
+      aria-label="Close modal backdrop"
+    ></button>
+
+    <div class="relative z-10 w-full max-w-md rounded-lg bg-white p-5 shadow-lg">
+      <div class="flex items-start justify-between gap-3">
+        <h2 class="text-lg font-semibold text-slate-900">{{ title }}</h2>
+        <button type="button" class="text-slate-500 hover:text-slate-700" (click)="onClose()">x</button>
+      </div>
+
+      <div class="mt-4 text-sm text-slate-700">
+        <ng-content></ng-content>
+      </div>
+
+      @if (showFooter) {
+        <div class="mt-5 flex justify-end gap-2">
+          <button
+            type="button"
+            class="rounded-md border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
+            (click)="onClose()"
+          >
+            {{ cancelText }}
+          </button>
+          <button
+            type="button"
+            class="rounded-md bg-slate-900 px-3 py-2 text-sm font-medium text-white hover:bg-slate-800"
+            (click)="onConfirm()"
+          >
+            {{ confirmText }}
+          </button>
+        </div>
+      }
+    </div>
+  </div>
+}

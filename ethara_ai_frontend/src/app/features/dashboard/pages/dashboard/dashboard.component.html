@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+
+<section class="min-h-screen bg-slate-100 px-4 py-8">
+  <div class="mx-auto w-full max-w-5xl">
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+      <div>
+        <h1 class="text-2xl font-semibold text-slate-900">Dashboard</h1>
+        <p class="mt-1 text-sm text-slate-600">Team task overview at a glance.</p>
+      </div>
+    </div>
+
+    @if (errorMessage()) {
+      <div class="mt-4 rounded-md border border-red-200 bg-red-50 p-3">
+        <p class="text-sm text-red-700">{{ errorMessage() }}</p>
+        <button
+          type="button"
+          class="mt-2 text-sm font-medium text-red-800 hover:underline"
+          (click)="retryLoad()"
+        >
+          Retry
+        </button>
+      </div>
+    }
+
+    @if (isLoading()) {
+      <div class="mt-4">
+        <app-loader message="Loading dashboard..."></app-loader>
+      </div>
+    } @else {
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="rounded-lg bg-white p-5 shadow-sm">
+          <p class="text-sm text-slate-500">Total Tasks</p>
+          <p class="mt-2 text-3xl font-semibold text-slate-900">{{ stats().totalTasks }}</p>
+        </article>
+
+        <article class="rounded-lg bg-white p-5 shadow-sm">
+          <p class="text-sm text-slate-500">To Do</p>
+          <p class="mt-2 text-3xl font-semibold text-slate-900">{{ stats().tasksByStatus.toDo }}</p>
+        </article>
+
+        <article class="rounded-lg bg-white p-5 shadow-sm">
+          <p class="text-sm text-slate-500">In Progress</p>
+          <p class="mt-2 text-3xl font-semibold text-slate-900">{{ stats().tasksByStatus.inProgress }}</p>
+        </article>
+
+        <article class="rounded-lg bg-white p-5 shadow-sm">
+          <p class="text-sm text-slate-500">Done</p>
+          <p class="mt-2 text-3xl font-semibold text-slate-900">{{ stats().tasksByStatus.done }}</p>
+        </article>
+      </div>
+
+      <div class="mt-4 grid gap-4 sm:grid-cols-2">
+        <article class="rounded-lg border border-red-200 bg-red-50 p-5">
+          <p class="text-sm text-red-700">Overdue Tasks</p>
+          <p class="mt-2 text-3xl font-semibold text-red-800">{{ stats().overdueTasks }}</p>
+        </article>
+      </div>
+    }
+  </div>
+</section>

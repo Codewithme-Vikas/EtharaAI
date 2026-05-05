@@ -1,0 +1,73 @@
+<section class="min-h-screen bg-slate-100 flex items-center justify-center px-4">
+  <div class="w-full max-w-md bg-white rounded-lg shadow-sm p-6">
+    <h1 class="text-2xl font-semibold text-slate-900">Sign Up</h1>
+    <p class="text-sm text-slate-500 mt-1">Create your account to get started.</p>
+
+    <form class="mt-6 space-y-4" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="name" class="block text-sm font-medium text-slate-700">Name</label>
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-400"
+          placeholder="Your full name"
+        />
+        @if (signupForm.controls.name.touched && signupForm.controls.name.hasError('required')) {
+          <p class="mt-1 text-xs text-red-600">Name is required.</p>
+        } @else if (signupForm.controls.name.touched && signupForm.controls.name.hasError('minlength')) {
+          <p class="mt-1 text-xs text-red-600">Name must be at least 2 characters.</p>
+        }
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-400"
+          placeholder="you@example.com"
+        />
+        @if (signupForm.controls.email.touched && signupForm.controls.email.hasError('required')) {
+          <p class="mt-1 text-xs text-red-600">Email is required.</p>
+        } @else if (signupForm.controls.email.touched && signupForm.controls.email.hasError('email')) {
+          <p class="mt-1 text-xs text-red-600">Please enter a valid email address.</p>
+        }
+      </div>
+
+      <div>
+        <label for="password" class="block text-sm font-medium text-slate-700">Password</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-400"
+          placeholder="At least 6 characters"
+        />
+        @if (signupForm.controls.password.touched && signupForm.controls.password.hasError('required')) {
+          <p class="mt-1 text-xs text-red-600">Password is required.</p>
+        } @else if (signupForm.controls.password.touched && signupForm.controls.password.hasError('minlength')) {
+          <p class="mt-1 text-xs text-red-600">Password must be at least 6 characters.</p>
+        }
+      </div>
+
+      @if (errorMessage()) {
+        <p class="text-sm text-red-600">{{ errorMessage() }}</p>
+      }
+
+      <button
+        type="submit"
+        class="w-full rounded-md bg-slate-900 text-white py-2 text-sm font-medium hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed"
+        [disabled]="isSubmitting()"
+      >
+        {{ isSubmitting() ? 'Creating account...' : 'Sign up' }}
+      </button>
+    </form>
+
+    <p class="mt-4 text-sm text-slate-600">
+      Already have an account?
+      <a routerLink="/login" class="text-slate-900 font-medium hover:underline">Login</a>
+    </p>
+  </div>
+</section>
