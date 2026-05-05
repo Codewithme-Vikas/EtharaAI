@@ -98,7 +98,7 @@ frontend/src/app/
 
 ---
 
-## 🔄 Application Flow
+## Application Flow
 
 1. User logs in → receives JWT
 2. Token stored in frontend
@@ -109,9 +109,9 @@ frontend/src/app/
 
 ---
 
-## ⚙️ Setup Instructions
+##️ Setup Instructions
 
-### 1️⃣ Clone Repository
+### ⃣Clone Repository
 
 ```bash
 git clone <your-repo-url>
@@ -120,7 +120,7 @@ cd team-task-manager
 
 ---
 
-### 2️⃣ Backend Setup
+###  Backend Setup
 
 ```bash
 cd backend
@@ -130,7 +130,7 @@ npm run start
 
 ---
 
-### 3️⃣ Frontend Setup
+### ⃣Frontend Setup
 
 ```bash
 cd frontend
@@ -146,14 +146,14 @@ src/environments/environment.ts
 
 ---
 
-## 🌍 Deployment
+## Deployment
 
 * Backend deployed on Railway
 * Frontend deployed on Railway
 
 ---
 
-## 📌 Folder Structure
+## Folder Structure
 
 ```
 team-task-manager/
@@ -164,7 +164,7 @@ team-task-manager/
 
 ---
 
-## 🎯 Key Highlights
+## Key Highlights
 
 * Clean MVC backend architecture
 * Feature-based Angular frontend
