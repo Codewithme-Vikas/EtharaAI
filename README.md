@@ -6,8 +6,8 @@ A full-stack Team Task Management web application where users can create project
 
 ## Live Demo
 
-* Frontend:
-* Backend API:
+* Frontend: https://ethara-ai-frontend-production-ef81.up.railway.app
+* Backend API: https://ethara-ai-backend-production-612a.up.railway.app
 
 ---
 
@@ -111,10 +111,10 @@ frontend/src/app/
 
 ##️ Setup Instructions
 
-### ⃣Clone Repository
+### Clone Repository
 
 ```bash
-git clone <your-repo-url>
+git clone [https://github.com/Codewithme-Vikas/EtharaAI/tree/masteryour-repo-url](https://github.com/Codewithme-Vikas/EtharaAI/tree/master)
 cd team-task-manager
 ```
 
@@ -130,7 +130,7 @@ npm run start
 
 ---
 
-### ⃣Frontend Setup
+### Frontend Setup
 
 ```bash
 cd frontend
@@ -156,10 +156,11 @@ src/environments/environment.ts
 ## Folder Structure
 
 ```
-team-task-manager/
-├── backend/
-├── frontend/
+ETHARA_AI/
+├── ethara_ai_backend/
+├── ethara_ai_frontend/
 ├── README.md
+├── .gitignore
 ```
 
 ---
@@ -175,7 +176,8 @@ team-task-manager/
 
 ## Author
 
-Vikash
+**Vikash**  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/vikas-gurjar-622477270/)
 ---
 
 ## License
