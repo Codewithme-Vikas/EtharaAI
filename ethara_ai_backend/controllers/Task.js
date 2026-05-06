@@ -49,7 +49,7 @@ exports.createTask = async (req, res) => {
         await project.save();
 
         const populatedTask = await Task.findById(task._id)
-            .populate("assignedUser", "username email")
+            .populate("assignedUser", "name email")
             .populate("projectId", "title");
 
         return res.status(201).json({
@@ -102,7 +102,7 @@ exports.assignTask = async (req, res) => {
         await task.save();
 
         const updatedTask = await Task.findById(task._id)
-            .populate("assignedUser", "username email")
+            .populate("assignedUser", "name email")
             .populate("projectId", "title");
 
         return res.status(200).json({
@@ -155,7 +155,7 @@ exports.updateTaskStatus = async (req, res) => {
         await task.save();
 
         const updatedTask = await Task.findById(task._id)
-            .populate("assignedUser", "username email")
+            .populate("assignedUser", "name email")
             .populate("projectId", "title");
 
         return res.status(200).json({
